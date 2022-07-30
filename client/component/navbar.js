@@ -40,6 +40,10 @@ const Navbar =({currentUser})=>{
         }
     }
 
+    const handleTrans = () => {
+        Router.push('/trans');
+    }
+
         return (
         <AppBar position="static" style={{backgroundColor:"#001540"}}>
         <Toolbar>
@@ -61,6 +65,7 @@ const Navbar =({currentUser})=>{
             >
                 <div className="menu">
                     <ListItemButton onClick={handleClose}>库存管理</ListItemButton>
+                    <ListItemButton onClick={handleTrans}>周转单管理</ListItemButton>
                 </div>
             </Menu>
             </IconButton>
@@ -73,7 +78,7 @@ const Navbar =({currentUser})=>{
             <Button color="inherit" onClick={()=>{Router.push('/')}}>
             回主页
             </Button>
-            <div id="pathname" style={{marginLeft:20,flexGrow:1}}>{showpath()}</div>
+            <div id="pathname" style={{marginLeft:20,flexGrow:1}}>{/*showpath()*/}</div>
             {!currentUser
             ? <Button color="inherit" onClick={()=>{Router.push('/auth/loginPage')}}>登录</Button>
             : <div/>
